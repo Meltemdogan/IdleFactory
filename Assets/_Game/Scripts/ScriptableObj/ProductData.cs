@@ -5,6 +5,6 @@ public class ProductData : ScriptableObject
 {
     public string productName;
     public Sprite productIkon;
-    public float productionTime;
+    public GameObject productPrefab;
     public int basePrice;
 }

@@ -426,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9217214498028503938}
   - component: {fileID: 531326847766427397}
+  - component: {fileID: 8879205057953944835}
   m_Layer: 0
   m_Name: ProductPrefab
   m_TagString: Untagged
@@ -466,6 +467,19 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 1
+--- !u!114 &8879205057953944835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296639577741370318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ed06eb31a15b74ba1a60192c8a98a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
 --- !u!1 &5850059194064243188
 GameObject:
   m_ObjectHideFlags: 0

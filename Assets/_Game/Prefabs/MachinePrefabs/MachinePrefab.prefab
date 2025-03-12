@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 2754963213124940952}
   - component: {fileID: 6478309461079742441}
   m_Layer: 0
-  m_Name: Machine
+  m_Name: MachinePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

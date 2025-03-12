@@ -11,8 +11,7 @@ public class Machine : MonoBehaviour
 {
     [SerializeField] private Transform StartPoint; 
     [SerializeField] private Transform EndPoint;
-    [SerializeField] private Transform ConveyorEndPoint;
-    
+    private Vector3 ConveyorEndPoint = new Vector3(0.01f, 1.08f, -4.02f);
     public MachineData machineData;
     private bool isRunning = true;
     
@@ -35,7 +34,7 @@ public class Machine : MonoBehaviour
     {
         EndPoint.position = new Vector3(EndPoint.position.x, EndPoint.position.y, Random.Range(29.8f, 31f));
         Debug.Log(EndPoint.position);
-        GameObject product = ProductPool.Instance.GetProduct(StartPoint.position);
-        product.GetComponent<ProductMovement>().Initialize(StartPoint.position, EndPoint.position, ConveyorEndPoint.position, ProductPool.Instance);
+        GameObject product = ProductPool.Instance.GetProduct(machineData.productData ,StartPoint.position);
+        product.GetComponent<ProductMovement>().Initialize(StartPoint.position, EndPoint.position, ConveyorEndPoint, ProductPool.Instance);
     }
 }

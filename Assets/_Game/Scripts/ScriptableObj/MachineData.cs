@@ -5,8 +5,8 @@ public class MachineData : ScriptableObject
 {
     public string machineName;
     public Sprite machineIcon;
-    public GameObject Product;
-    public ProductData producesProduct; 
+    public GameObject machinePrefab;
+    public ProductData productData;
     public int price; 
     public float productionSpeed;
 }

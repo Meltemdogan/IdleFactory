@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerEconomy : MonoBehaviour
 {
     public static PlayerEconomy Instance;
-    public float currentMoney = 100f;
+    public float currentMoney = 500f;
     public TMP_Text moneyText;
     
     private void Awake()

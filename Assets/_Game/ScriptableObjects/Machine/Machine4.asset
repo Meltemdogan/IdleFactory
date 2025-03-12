@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398acb05b66a7514fa86d73b4a2aad8c, type: 3}
   m_Name: Machine4
   m_EditorClassIdentifier: 
-  machineName: 
-  machineIkon: {fileID: 0}
-  producesProduct: {fileID: 0}
-  productionSpeedMultiplier: 0
-  price: 0
+  machineName: Machine4
+  machineIcon: {fileID: 0}
+  machinePrefab: {fileID: 387610343000040679, guid: e4ae153df3a529146b15d954b303ab35, type: 3}
+  productData: {fileID: 11400000, guid: 5b48ae82f9b8f804aa43c96b606a7aec, type: 2}
+  price: 5000
+  productionSpeed: 0.2

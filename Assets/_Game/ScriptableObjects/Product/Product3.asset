@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcb49732881b3d44a84ed124169f7fc, type: 3}
+  m_Script: {fileID: 11500000, guid: df7c4c3a60adf7947a6e144341573671, type: 3}
   m_Name: Product3
   m_EditorClassIdentifier: 
   productName: Product3
   productIkon: {fileID: 0}
-  productionTime: 10
-  basePrice: 15
+  productPrefab: {fileID: 7053848823426852696, guid: ebce71e6618793348ade64699c4f3c76, type: 3}
+  basePrice: 30

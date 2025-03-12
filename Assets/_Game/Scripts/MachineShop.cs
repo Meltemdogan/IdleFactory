@@ -5,15 +5,18 @@ public class MachineShop : MonoBehaviour
 {
     public MachineData machineToBuy;
     public Transform machineParent;
+    public Transform[] spawnPoints;
     
-    public void BuyMachine()
+    public void BuyMachine(MachineData machineData, int machineIndex)
     {
         if(PlayerEconomy.Instance.currentMoney >= machineToBuy.price)
         {
             PlayerEconomy.Instance.SpendMoney(machineToBuy.price);
-            GameObject machineObj = new GameObject(machineToBuy.machineName);
-            Machine newMachine = machineObj.AddComponent<Machine>();
-            newMachine.machineData = machineToBuy;
+            
+            Transform spawnPoint = spawnPoints[machineIndex];
+            
+            GameObject machineObj = Instantiate(machineData.machinePrefab, spawnPoint.position, Quaternion.identity);
+            Machine newMachine = machineObj.GetComponent<Machine>(); 
             
             GameManager.Instance.RegisterMachine(newMachine);
         }

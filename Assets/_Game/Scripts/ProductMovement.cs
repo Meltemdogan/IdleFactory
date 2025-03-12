@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
@@ -43,7 +44,7 @@ public class ProductMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, _endPosition, moveSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, _endPosition) < 0.1f)
             {
-                pool.ReturnProduct(gameObject);
+                pool.ReturnProduct(gameObject.GetComponent<ProductData>(), gameObject);
             }
         } 
     }

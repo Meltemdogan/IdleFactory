@@ -8,35 +8,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public List<Machine> activeMachines = new List<Machine>();
-    public TMP_Text goldPerSecondText;
-    
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
     
-    private void Update()
+    public void RegisterMachine(Machine machine)
     {
-        //UpdateGoldPerSecondUI();
-    }
-    
-    public float GetTotalGoldPerSecond()
-    {
-        float totalGold = 0;
-        foreach (var machine in activeMachines)
+        activeMachines.Add(machine);
+        if (machine.machineData.productData != null)
         {
-            //totalGold += machine.machineData.goldPerSecond;
+            ProductPool.Instance.RegisterProductToPool(machine.machineData.productData);
         }
-        
-        return totalGold;
-    }
-    private void UpdateGoldPerSecondUI()
-    {
-        goldPerSecondText.text = "Gold Per Second: " + GetTotalGoldPerSecond();
-    }
-    public void RegisterMachine(Machine newMachine)
-    {
-        activeMachines.Add(newMachine);
     }
 }
