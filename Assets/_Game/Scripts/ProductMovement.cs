@@ -13,6 +13,7 @@ public class ProductMovement : MonoBehaviour
     private Vector3 endPosition;
     private Vector3 conveyorEndPosition;
     private ProductPool pool;
+    private ProductData productData;
     private bool isTurning;
     
     private void OnEnable()
@@ -20,12 +21,13 @@ public class ProductMovement : MonoBehaviour
         isTurning = false;
     }
     
-    public void Initialize(Vector3 start, Vector3 end, Vector3 conveyorEnd, ProductPool objectPool)
+    public void Initialize(Vector3 start, Vector3 end, Vector3 conveyorEnd, ProductData data , ProductPool objectPool)
     {
         startPosition = start;
         endPosition = end;
         conveyorEndPosition = conveyorEnd;
         pool = objectPool;
+        productData = data;
     }
     
     private void Update()
@@ -44,7 +46,7 @@ public class ProductMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, _endPosition, moveSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, _endPosition) < 0.1f)
             {
-                pool.ReturnProduct(gameObject.GetComponent<ProductData>(), gameObject);
+                pool.ReturnProduct(productData, gameObject);
             }
         } 
     }

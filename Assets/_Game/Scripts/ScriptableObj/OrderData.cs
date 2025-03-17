@@ -3,9 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "OrderData", menuName = "Factory/Order")]
 public class OrderData : ScriptableObject
 {
-   public string orderName;
-   public ProductData requestedProduct;
+   public ProductData product;
    public int quantity;
-   public float timeLimit;
    public int reward;
 }

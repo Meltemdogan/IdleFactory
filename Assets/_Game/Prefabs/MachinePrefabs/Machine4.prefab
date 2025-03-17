@@ -50,8 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5748345070435600171, guid: b765e556c5fecc84da9656d5be2f1097, type: 3}
       propertyPath: m_Name
-      value: Machine
+      value: Machine4
       objectReference: {fileID: 0}
+    - target: {fileID: 6478309461079742441, guid: b765e556c5fecc84da9656d5be2f1097, type: 3}
+      propertyPath: machineData
+      value: 
+      objectReference: {fileID: 11400000, guid: c43247bf00b0f9d4eb302b106c77195d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

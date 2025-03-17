@@ -7,6 +7,6 @@ public class MachineData : ScriptableObject
     public Sprite machineIcon;
     public GameObject machinePrefab;
     public ProductData productData;
-    public int price; 
+    public float price; 
     public float productionSpeed;
 }

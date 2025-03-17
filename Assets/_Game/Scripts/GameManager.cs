@@ -14,13 +14,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-    
+
     public void RegisterMachine(Machine machine)
     {
         activeMachines.Add(machine);
-        if (machine.machineData.productData != null)
-        {
-            ProductPool.Instance.RegisterProductToPool(machine.machineData.productData);
-        }
+        OrderManager.Instance.activeProducts.Add(machine.machineData.productData); 
+        ProductPool.Instance.RegisterProductToPool(machine.machineData.productData);
     }
 }

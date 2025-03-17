@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProductPool : MonoBehaviour
 {
     public static ProductPool Instance;
-    public GameObject productPrefab;
+   // public GameObject productPrefab;
     public int poolSize = 10;
     private Dictionary<ProductData, Queue<GameObject>> poolDictionary = new Dictionary<ProductData, Queue<GameObject>>();
     
@@ -38,7 +38,7 @@ public class ProductPool : MonoBehaviour
         }
         else if (poolDictionary.ContainsKey(productData))
         {
-            GameObject obj = Instantiate(productPrefab, position, Quaternion.identity, transform);
+            GameObject obj = Instantiate(productData.productPrefab, position, Quaternion.identity, transform);
             return obj;
         }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,9 +7,16 @@ using UnityEngine.UI;
 
 public class FactoryStorage : MonoBehaviour
 {
+    public static FactoryStorage Instance;
     public Dictionary<ProductData, int> storage = new Dictionary<ProductData, int>();
     public TMP_Text storageText;
-    
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     public void AddProduct(ProductData product)
     {
         if (storage.ContainsKey(product))
@@ -19,18 +27,8 @@ public class FactoryStorage : MonoBehaviour
         {
             storage.Add(product, 1);
         }
-        
-        UpdateStorageText();
-    }
-    
-    private void UpdateStorageText()
-    {
-        storageText.text = "Storage:";
-        
-        foreach (var product in storage)
-        {
-            storageText.text += product.Key.productName + ": " + product.Value + "\n";
-        }
+        //UIManager.Instance.UpdateStorageText();
+        Debug.Log("Ürün eklendi: " + product.productName  + " Toplam: " + storage[product]);
     }
     
     public bool HasEnoughProducts(ProductData product, int quantity)
@@ -48,7 +46,5 @@ public class FactoryStorage : MonoBehaviour
                 storage.Remove(product);
             }
         }
-        
-        UpdateStorageText();
     }
 }
