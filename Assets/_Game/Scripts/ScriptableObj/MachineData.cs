@@ -4,7 +4,7 @@ using UnityEngine;
 public class MachineData : ScriptableObject
 {
     public string machineName;
-    public Sprite machineIcon;
+    public Sprite machineSprite;
     public GameObject machinePrefab;
     public ProductData productData;
     public float price; 

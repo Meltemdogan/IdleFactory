@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,8 @@ public class Machine : MonoBehaviour
     private Vector3 ConveyorEndPoint = new Vector3(0.01f, 1.08f, -4.02f);
     public MachineData machineData;
     private bool isRunning = true;
+    
+    public static UnityAction OnProductProduced;
 
     public void Initialize(Transform mainConvEndPoint)
     {
@@ -34,6 +37,13 @@ public class Machine : MonoBehaviour
             ProduceProduct();
         }
     }
+    public void machineSpawn(Transform spawnPoint)
+    {
+        foreach (var VARIABLE in GameManager.Instance.activeMachines)
+        {
+            
+        }
+    }
     
     private void ProduceProduct()
     {
@@ -42,4 +52,5 @@ public class Machine : MonoBehaviour
         product.GetComponent<ProductMovement>().Initialize(StartPoint.position, EndPoint.position, ConveyorEndPoint, machineData.productData, ProductPool.Instance);
         FactoryStorage.Instance.AddProduct(machineData.productData);
     }
+    
 }

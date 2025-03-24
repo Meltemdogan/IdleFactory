@@ -12,6 +12,6 @@ public class MachineBand : MonoBehaviour
     }
     public void ShiftBand()
     {
-        bandMaterial.mainTextureOffset += new Vector2(0, speed * Time.deltaTime);
+        bandMaterial.mainTextureOffset = new Vector2(0, speed * Time.time);
     }
 }
