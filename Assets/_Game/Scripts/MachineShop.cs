@@ -9,23 +9,24 @@ using UnityEngine.UI;
 public class MachineShop : MonoBehaviour
 {
     public static MachineShop Instance;
-
+    
     public List<MachineData> machineDatas;
     public GameObject machineUIPrefab;
     public Transform machineUIParent;
     public Transform[] spawnPoints;
+    public Transform firstMachinePoint;
     [SerializeField] private Transform mainConveyorEndPoint;
-
+    
     private void Awake()
     {
         if (Instance == null) Instance = this;
     }
-
+    
     private void Start()
     {
         uiInitialize();
     }
-
+    
     public void uiInitialize()
     {
         for (int i = 0; i < machineDatas.Count; i++)
@@ -41,37 +42,29 @@ public class MachineShop : MonoBehaviour
             nameText.text = machineData.machineName;
             iconImage.sprite = machineData.machineSprite;
             
-            int machineIndex = i; 
+            int machineIndex = i;
             buyButton.onClick.AddListener(() => BuyMachine(machineData, machineIndex));
         }
     }
-    public void InitializeMachinePoints()
-    {
-        for (int i = 0; i < GameManager.Instance.activeMachines.Count; i++)
-        {
-            Transform spawnPoint = spawnPoints[i];
-        }
-    }
-
+    
     public void BuyMachine(MachineData machineData, int machineIndex)
     {
         if (CurrencyManager.Instance.currentMoney >= machineData.price)
         {
             CurrencyManager.Instance.SpendMoney(machineData.price);
-
-            if (machineIndex >= 0 && machineIndex < spawnPoints.Length)
+            
+            if (machineIndex >= 0 && machineIndex < machineDatas.Count)
             {
-                Transform spawnPoint = spawnPoints[machineIndex];
-
-                GameObject machineObj = Instantiate(machineData.machinePrefab, spawnPoint.position, Quaternion.identity);
+                Vector3 spawnPoint = firstMachinePoint.position + new Vector3(machineIndex * 6, 0, 0);
+                GameObject machineObj = Instantiate(machineData.machinePrefab, spawnPoint, Quaternion.identity);
                 Machine newMachine = machineObj.GetComponent<Machine>();
                 newMachine.Initialize(mainConveyorEndPoint);
-
+                
                 GameManager.Instance.RegisterMachine(newMachine);
             }
             else
             {
-                Debug.LogError("Invalid machine index: " + machineIndex);
+                Debug.LogError("Invalid machine index (machineDatas dışında): " + machineIndex);
             }
         }
         else
@@ -80,4 +73,3 @@ public class MachineShop : MonoBehaviour
         }
     }
 }
-

@@ -37,14 +37,6 @@ public class Machine : MonoBehaviour
             ProduceProduct();
         }
     }
-    public void machineSpawn(Transform spawnPoint)
-    {
-        foreach (var VARIABLE in GameManager.Instance.activeMachines)
-        {
-            
-        }
-    }
-    
     private void ProduceProduct()
     {
         EndPoint.position = new Vector3(EndPoint.position.x, EndPoint.position.y, Random.Range(29.8f, 31f));

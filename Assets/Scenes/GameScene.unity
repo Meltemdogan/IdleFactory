@@ -921,6 +921,7 @@ MonoBehaviour:
   orderUIPrefab: {fileID: 6389152383416347261, guid: 63f930b0116f4e04abe41cace81b0f79, type: 3}
   orderUIParent: {fileID: 699835919}
   activeOrders: []
+  activeOrderData: []
   activeProducts: []
   factoryStorage: {fileID: 146123230}
   orderSpawnInterval: 10
@@ -1444,6 +1445,7 @@ MonoBehaviour:
   - {fileID: 2057223576}
   - {fileID: 611329249}
   - {fileID: 1105691415}
+  firstMachinePoint: {fileID: 1856285420}
   mainConveyorEndPoint: {fileID: 800664800}
 --- !u!4 &602351128
 Transform:
