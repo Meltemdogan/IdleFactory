@@ -1439,6 +1439,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 40a76adc468e8064fb149a3c169ed7fa, type: 2}
   - {fileID: 11400000, guid: c43247bf00b0f9d4eb302b106c77195d, type: 2}
   machineUIPrefab: {fileID: 8781457262509622880, guid: b5fdfb77740f1274a853599a985741a0, type: 3}
+  machineSlotPrefab: {fileID: 0}
   machineUIParent: {fileID: 885825364}
   spawnPoints:
   - {fileID: 1856285420}
@@ -2390,6 +2391,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5315268556692563185, guid: 715401d994ff25a438a1a4d2a2f4858f, type: 3}
   m_PrefabInstance: {fileID: 268280486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1082090462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1082090463}
+  m_Layer: 0
+  m_Name: MachineSlotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1082090463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082090462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 0.1, z: 38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1105691415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 274043505160307758, guid: 88a08e1da251c7c4892aa6bc12b334c4, type: 3}
@@ -4136,6 +4168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeMachines: []
+  machineDatas:
+  - {fileID: 6102426163744001415, guid: 22054531ac3401f46a78d9e554a0fa8c, type: 3}
+  - {fileID: 9126329164448505698, guid: 71ccb68ec24fee74fbd9812331a0bd36, type: 3}
+  - {fileID: 6195039177621806537, guid: eb80034c3b8bf55468808e338eeef53b, type: 3}
+  - {fileID: 1387316280474973221, guid: e4ae153df3a529146b15d954b303ab35, type: 3}
+  firstSlotPoint: {fileID: 1082090463}
+  machineSlotPrefab: {fileID: 994043861675900090, guid: c7ff1e63c9748c141aad9fa20c80fcac, type: 3}
+  machineSlotParent: {fileID: 1082090463}
+  slotDistance: 8
 --- !u!4 &2071822386
 Transform:
   m_ObjectHideFlags: 0
@@ -4528,3 +4569,4 @@ SceneRoots:
   - {fileID: 6802225155873317638}
   - {fileID: 337755738}
   - {fileID: 146123231}
+  - {fileID: 1082090463}

@@ -12,6 +12,7 @@ public class MachineShop : MonoBehaviour
     
     public List<MachineData> machineDatas;
     public GameObject machineUIPrefab;
+    public GameObject machineSlotPrefab;
     public Transform machineUIParent;
     public Transform[] spawnPoints;
     public Transform firstMachinePoint;
@@ -46,7 +47,6 @@ public class MachineShop : MonoBehaviour
             buyButton.onClick.AddListener(() => BuyMachine(machineData, machineIndex));
         }
     }
-    
     public void BuyMachine(MachineData machineData, int machineIndex)
     {
         if (CurrencyManager.Instance.currentMoney >= machineData.price)
